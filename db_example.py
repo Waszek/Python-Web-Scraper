@@ -35,7 +35,5 @@ def get_all_users():
     conn.close()
 
 if __name__ == "__main__":
-    init_database()
-    add_user("John Doe", "Facebook")
-    add_user("Alejadro Ferrero", "Police")
+    # init_database()
     get_all_users()

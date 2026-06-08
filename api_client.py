@@ -1,7 +1,8 @@
 import requests
+from db_example import add_user, init_database
 
 def main():
-
+ init_database()
     
  try:
     url1 = "https://jsonplaceholder.typicode.com/users"
@@ -17,7 +18,8 @@ def main():
             user_name = user["name"]
             user_company = user["company"]["name"]
 
-            print(f"{user_name} works in {user_company}")
+            
+            add_user(user_name, user_company)
  except requests.exceptions.ConnectionError:
     print("Error: Can't connect to the server!")
  except requests.exceptions.HTTPError as err:
