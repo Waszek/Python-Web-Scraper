@@ -4,8 +4,9 @@ def main():
 
     
  try:
-    url = "https://api.github.com/some_fake_page_that_does_not_exist"
-    response = requests.get(url)
+    url1 = "https://jsonplaceholder.typicode.com/users"
+    url2= "https://api.github.com/some_fake_page_that_does_not_exist"
+    response = requests.get(url1)
     response.raise_for_status()
     data = response.json()
 
