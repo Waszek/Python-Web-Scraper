@@ -1,6 +1,10 @@
 import requests
 from db_example import add_user, init_database, add_post
 
+def extract_company_name(user_data):
+       return user_data["company"]["name"]
+
+
 def main():
  init_database()
     
@@ -16,7 +20,7 @@ def main():
     else:
         for user in data:
             user_name = user["name"]
-            user_company = user["company"]["name"]
+            user_company = extract_company_name(user)
 
             
             add_user(user_name, user_company)
